@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using api.Domain;
+using api.Domain.Interface;
+using api.Model;
 
 namespace api
 {
@@ -29,6 +32,7 @@ namespace api
         {
             // Add framework services.
             services.AddMvc();
+            services.AddSingleton<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
