@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using api.Model;
+using api.Domain.Interface;
+
+namespace api.Domain
+{
+    public class ProductService : IProductService
+    {
+       // private IProductRepository _productRepository;
+
+        public ProductService()//(IProductRepository productRepository)
+        {
+            //_productRepository = productRepository;
+        }
+
+        public IList<Product> GetAllProductsFor(int type)
+        {
+            IDiscountStrategy discountStrategy = DiscountFactory.GetDiscountStrategyFor(type);//(customerType);
+            
+            IList<Product> products = new List<Product>();
+            products.Add(new Product(){ Price = discountStrategy.ApplyExtraDiscountsTo(1000) });
+
+            //IList<Product> products = _productRepository.FindAll();
+
+            //products.Apply(discountStrategy);
+
+            return products;
+        }
+    }
+}
