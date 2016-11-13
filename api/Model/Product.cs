@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using api.Domain;
 
 namespace api.Model
 {
@@ -11,6 +12,6 @@ namespace api.Model
 
         public string Name {get; set;}
 
-        public decimal Price {get; set;}//Price
+        public Price Price {get; set;}
     }
 }
