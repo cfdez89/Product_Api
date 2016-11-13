@@ -1,3 +1,8 @@
+/*
+ *Carlos Fernandez Jimenez
+ *Products service logic
+ *Based on Professional ASP.NET Design Patterns Book
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
