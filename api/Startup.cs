@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using api.Domain;
 using api.Domain.Interface;
 using api.Model;
+using api.ViewModel;
+using api.Util;
 
 namespace api
 {
