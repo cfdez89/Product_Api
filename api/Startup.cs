@@ -34,6 +34,7 @@ namespace api
         {
             // Add framework services.
             services.AddMvc();
+            // Add application services.
             services.AddSingleton<IProductService, ProductService>();
         }
 

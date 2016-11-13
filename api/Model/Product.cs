@@ -1,3 +1,8 @@
+/*
+ *Carlos Fernandez Jimenez
+ *Model to map products
+ *Based on Professional ASP.NET Design Patterns Book
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
