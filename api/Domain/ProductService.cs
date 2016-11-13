@@ -24,13 +24,12 @@ namespace api.Domain
         public IList<Product> GetAllProductsFor(int type)
         {
             IDiscountStrategy discountStrategy = DiscountFactory.GetDiscountStrategyFor(type);//(customerType);
-            
             IList<Product> products = new List<Product>();
-            products.Add(new Product(){ Price = discountStrategy.ApplyExtraDiscountsTo(1000) });
+            products.Add(new Product(){ Name = "Helado", Price = new Price(1000, 20) });
 
             //IList<Product> products = _productRepository.FindAll();
 
-            //products.Apply(discountStrategy);
+            products.Apply(discountStrategy);
 
             return products;
         }
