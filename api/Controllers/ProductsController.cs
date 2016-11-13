@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 using api.Domain;
 using api.Domain.Interface;
 using api.Model;
+using api.ViewModel;//borrar luego
+using api.Util;
 
 namespace api.Controllers
 {
@@ -31,7 +33,8 @@ namespace api.Controllers
             try
             {
                 IList<Product> productEntities = _productService.GetAllProductsFor(0);
-                return Ok(productEntities );
+                IList<ProductViewModel> products =  productEntities.ConvertToProductListViewModel();
+                return Ok(products);
             }
             catch (Exception ex)
             {
